@@ -1,0 +1,43 @@
+{
+    IBClasses = (
+        {CLASS = AudioFileListView; LANGUAGE = ObjC; SUPERCLASS = NSTableView; }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSLevelIndicator; LANGUAGE = ObjC; SUPERCLASS = NSControl; }, 
+        {
+            ACTIONS = {
+                chooseOutputDirectory = id; 
+                closeAnalysisResultsSheet = id; 
+                closeProgressSheet = id; 
+                iaAnalyzeButtonPressed = id; 
+                iaDestretchButtonPressed = id; 
+                removeAllFiles = id; 
+                showAnalysisResultsSheet = id; 
+                showProgressSheet = id; 
+                updateActionEnabledState = id; 
+            }; 
+            CLASS = SFWindowController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                uiAUViewContainer = NSBox; 
+                uiAnalysisResultsButton = NSButton; 
+                uiAnalysisResultsSheet = NSPanel; 
+                uiAnalyzeButton = NSButton; 
+                uiAudioFileTableView = AudioFileListView; 
+                uiDestretchButton = NSButton; 
+                uiDestretchSMPTECheckbox = NSButton; 
+                uiOutputDirectory = NSTextField; 
+                uiProgressSheet = NSPanel; 
+                uiarsDestretchButton = NSButton; 
+                uiarsDiscardButton = NSButton; 
+                uiarsFrameDataTable = NSTableView; 
+                uiarsSummaryText = NSTextField; 
+                uipsAbortButton = NSButton; 
+                uipsDescription = NSTextField; 
+                uipsProgress = NSProgressIndicator; 
+                uipsSubDescription = NSTextField; 
+            }; 
+            SUPERCLASS = NSWindowController; 
+        }
+    ); 
+    IBVersion = 1; 
+}

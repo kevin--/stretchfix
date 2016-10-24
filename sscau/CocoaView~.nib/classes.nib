@@ -1,0 +1,40 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {iaParam1Changed = id; }; 
+            CLASS = CocoaView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {uiParam1Slider = NSSlider; uiParam1TextField = NSTextField; }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = CocoaViewFactory; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {uiFreshlyLoadedView = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {iaClockToleranceChanged = id; iaSaveLog = id; iaSquaredChoiceChanged = id; }; 
+            CLASS = SSCAUView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                uiAverageSampleSkew = NSTextField; 
+                uiAverageTimeSkew = NSTextField; 
+                uiClockToleranceSlider = NSSlider; 
+                uiClockToleranceText = NSTextField; 
+                uiSkewLog = NSTextView; 
+                uiSquaredChoice = NSButton; 
+                uiTimeStamp = NSTextField; 
+            }; 
+            SUPERCLASS = NSView; 
+        }, 
+        {
+            CLASS = SSCAUViewFactory; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {uiFreshlyLoadedView = SSCAUView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
