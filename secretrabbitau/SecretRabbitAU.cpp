@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 #include "SecretRabbitAU.h"
 
-COMPONENT_ENTRY(SecretRabbitAU)
+AUDIOCOMPONENT_ENTRY(AUBaseFactory, SecretRabbitAU)
 
 #pragma mark Constructors
 
@@ -58,10 +58,11 @@ SecretRabbitAU::SecretRabbitAU(AudioUnit component)
 	Globals()->UseIndexedParameters(kNumberOfParameters);
 	
 	Globals()->SetParameter(kParam_Ratio, 1.0);
-        
-#if AU_DEBUG_DISPATCHER
-	mDebugDispatcher = new AUDebugDispatcher (this);
-#endif
+}
+
+SecretRabbitAU::~SecretRabbitAU()
+{
+    
 }
 
 /*
@@ -83,8 +84,10 @@ ComponentResult SecretRabbitAU::Initialize()
 /*
 	Resets the AU to its uninitialized state
 */
-ComponentResult SecretRabbitAU::Reset()
+ComponentResult SecretRabbitAU::Reset(AudioUnitScope inScope, AudioUnitElement inElement)
 {
+    tBase::Reset(inScope, inElement);
+    
 	if(handle != NULL)
 	{
 		handle = src_delete(handle);
@@ -237,7 +240,7 @@ ComponentResult SecretRabbitAU::GetProperty(AudioUnitPropertyID inID,
 				if (bundleURL == NULL) return fnfErr;
                 
 				CFStringRef className = CFSTR("CocoaViewFactory");
-				AudioUnitCocoaViewInfo cocoaInfo = { bundleURL, className };
+				AudioUnitCocoaViewInfo cocoaInfo = { bundleURL, {className} };
 				*((AudioUnitCocoaViewInfo *)outData) = cocoaInfo;
 				
 				return noErr;
@@ -364,16 +367,15 @@ OSStatus SecretRabbitAU::ProcessBufferLists(AudioUnitRenderActionFlags & ioActio
 			return srcResult;
 		}
 		
+        SRC_DATA srcData = {};
+        //setup input, use input buffer
+        srcData.data_in = static_cast<float*>(inBuffer.mBuffers[0].mData);
+        size_t inputFrames = inBuffer.mBuffers[0].mDataByteSize / sizeof(float) / inBuffer.mBuffers[0].mNumberChannels;
+        srcData.input_frames = inputFrames;
 		
-		SRC_DATA srcData;
-
-		UInt32 dataInCount;
-		CopyABLToFloatArray(inBuffer, &(srcData.data_in), &dataInCount);
-		
-		srcData.input_frames = (long)dataInCount;
-		
-		srcData.data_out = new float[(long)(dataInCount * ratio)];
-		srcData.output_frames = (long)(dataInCount * ratio);
+        size_t outputBufferFrames = static_cast<size_t>(ceil(inputFrames * ratio));
+		srcData.data_out = new float[outputBufferFrames];
+        srcData.output_frames = outputBufferFrames;
 		srcData.src_ratio = ratio;
 		
 		srcData.end_of_input = 0;	//1 == more data available, 0 == no more data available
@@ -385,37 +387,14 @@ OSStatus SecretRabbitAU::ProcessBufferLists(AudioUnitRenderActionFlags & ioActio
 		}
 		
 		CopyFloatArrayToABL(&srcData.data_out, srcData.output_frames, outBuffer);
-		
-		delete [] srcData.data_in;
+        
+        delete [] srcData.data_out;
 	}
 	
 	return noErr;
 }
 
 #pragma mark Utility
-
-/*
-	Copies the first buffer in an AudioBufferList to an array of floats.
-	Assumes that the AudioBufferList is an array of Float32s
-	bufferIn		the AudioBufferList to convert
-	arrayOut		the output array of floats
-	arrayOutLength	the number of items in the output array.
-	
-	** arrayOut must be disposed by the caller
-*/
-void SecretRabbitAU::CopyABLToFloatArray(const AudioBufferList & bufferIn, float ** arrayOut, UInt32 * arrayOutLength)
-{
-	int sizeofInSample = sizeof(Float32);
-	(*arrayOutLength) = bufferIn.mBuffers[0].mDataByteSize / sizeofInSample / bufferIn.mBuffers[0].mNumberChannels;
-	(*arrayOut) = new float[(*arrayOutLength)];
-	
-	Float32 * temp = (Float32*)bufferIn.mBuffers[0].mData;
-	
-	for(UInt32 i = 0; i < (*arrayOutLength); i++)
-	{
-		(*arrayOut)[i] = temp[i];
-	}
-}
 
 /*
 	Copies a given array of floats to the first array of an AudioBufferList, as an array of Float32s
@@ -429,7 +408,7 @@ void SecretRabbitAU::CopyFloatArrayToABL(float ** arrayIn, UInt32 arrayInLength,
 	bufferOut.mBuffers[0].mNumberChannels = 1;
 	bufferOut.mBuffers[0].mData = new Float32[arrayInLength];
 	bufferOut.mBuffers[0].mDataByteSize = sizeof(Float32) * arrayInLength;
-		
+        
 	for(UInt32 i = 0; i < arrayInLength; i++)
 	{
 		((Float32*)bufferOut.mBuffers[0].mData)[i] = (Float32)((*arrayIn)[i]);

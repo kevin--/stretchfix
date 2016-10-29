@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,9 +21,56 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1926439E1DBF349500201FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 192643991DBF349500201FD1 /* sscau.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D01CCD20486CAD60068D4B7;
+			remoteInfo = sscau;
+		};
+		192643A01DBF349500201FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 192643991DBF349500201FD1 /* sscau.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8BA4AE4E073EB69000A2709A;
+			remoteInfo = CocoaUI;
+		};
+		192643A71DBF349B00201FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 192643A21DBF349B00201FD1 /* secretrabbitau.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D01CCD20486CAD60068D4B7;
+			remoteInfo = secretrabbitau;
+		};
+		192643A91DBF349B00201FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 192643A21DBF349B00201FD1 /* secretrabbitau.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8BA4AE4E073EB69000A2709A;
+			remoteInfo = CocoaUI;
+		};
+		192643AE1DBF34BE00201FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 192643A21DBF349B00201FD1 /* secretrabbitau.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D01CCC60486CAD60068D4B7;
+			remoteInfo = secretrabbitau;
+		};
+		192643B41DBF34C400201FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 192643991DBF349500201FD1 /* sscau.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D01CCC60486CAD60068D4B7;
+			remoteInfo = sscau;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		192643991DBF349500201FD1 /* sscau.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sscau.xcodeproj; path = ../sscau/sscau.xcodeproj; sourceTree = "<group>"; };
+		192643A21DBF349B00201FD1 /* secretrabbitau.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = secretrabbitau.xcodeproj; path = ../secretrabbitau/secretrabbitau.xcodeproj; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -92,6 +139,33 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
+		192643981DBF348900201FD1 /* AudioUnits */ = {
+			isa = PBXGroup;
+			children = (
+				192643A21DBF349B00201FD1 /* secretrabbitau.xcodeproj */,
+				192643991DBF349500201FD1 /* sscau.xcodeproj */,
+			);
+			name = AudioUnits;
+			sourceTree = "<group>";
+		};
+		1926439A1DBF349500201FD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1926439F1DBF349500201FD1 /* sscau.component */,
+				192643A11DBF349500201FD1 /* CocoaViewFactory.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		192643A31DBF349B00201FD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				192643A81DBF349B00201FD1 /* secretrabbitau.component */,
+				192643AA1DBF349B00201FD1 /* CocoaViewFactory.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +177,7 @@
 		29B97314FDCFA39411CA2CEA /* StretchFix */ = {
 			isa = PBXGroup;
 			children = (
+				192643981DBF348900201FD1 /* AudioUnits */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -159,6 +234,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				192643B51DBF34C400201FD1 /* PBXTargetDependency */,
+				192643AF1DBF34BE00201FD1 /* PBXTargetDependency */,
 			);
 			name = StretchFix;
 			productInstallPath = "$(HOME)/Applications";
@@ -171,15 +248,65 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "StretchFix" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* StretchFix */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 192643A31DBF349B00201FD1 /* Products */;
+					ProjectRef = 192643A21DBF349B00201FD1 /* secretrabbitau.xcodeproj */;
+				},
+				{
+					ProductGroup = 1926439A1DBF349500201FD1 /* Products */;
+					ProjectRef = 192643991DBF349500201FD1 /* sscau.xcodeproj */;
+				},
+			);
+			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* StretchFix */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1926439F1DBF349500201FD1 /* sscau.component */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = sscau.component;
+			remoteRef = 1926439E1DBF349500201FD1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		192643A11DBF349500201FD1 /* CocoaViewFactory.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CocoaViewFactory.bundle;
+			remoteRef = 192643A01DBF349500201FD1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		192643A81DBF349B00201FD1 /* secretrabbitau.component */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = secretrabbitau.component;
+			remoteRef = 192643A71DBF349B00201FD1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		192643AA1DBF349B00201FD1 /* CocoaViewFactory.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CocoaViewFactory.bundle;
+			remoteRef = 192643A91DBF349B00201FD1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -207,6 +334,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		192643AF1DBF34BE00201FD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = secretrabbitau;
+			targetProxy = 192643AE1DBF34BE00201FD1 /* PBXContainerItemProxy */;
+		};
+		192643B51DBF34C400201FD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sscau;
+			targetProxy = 192643B41DBF34C400201FD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -238,6 +378,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YSPf.StretchFix;
 				PRODUCT_NAME = StretchFix;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
@@ -247,14 +388,11 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YSPf.StretchFix;
 				PRODUCT_NAME = StretchFix;
 				WRAPPER_EXTENSION = app;
 			};
@@ -263,14 +401,28 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Debug;
@@ -278,14 +430,26 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

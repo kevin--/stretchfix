@@ -46,19 +46,19 @@ SFEngine::~SFEngine() {
 
 bool SFEngine::Initialize() {
 
-	Component component = 0;
+	AudioComponent component = NULL;
 	//check for AUVarispeed
-	ComponentDescription varispeed = VARISPEED_DESC;
-	component = FindNextComponent(component, &varispeed);
-	if(component == 0) {
+	AudioComponentDescription varispeed = VARISPEED_DESC;
+	component = AudioComponentFindNext(component, &varispeed);
+	if(component == NULL) {
 		NSRunAlertPanel(@"Missing Component", @"The Varispeed Audio Unit could not be found.\n\nPlease make sure it is installed.", @"Quit", nil, nil);
 		return false;
 	}
 	//check for SSCAU
-	component = 0;
-	ComponentDescription sscau = SSCAU_DESC;
-	component = FindNextComponent(component, &sscau);
-	if(component == 0) {
+	component = NULL;
+	AudioComponentDescription sscau = SSCAU_DESC;
+	component = AudioComponentFindNext(component, &sscau);
+	if(component == NULL) {
 		NSRunAlertPanel(@"Missing Component", @"The SMPTE-Stretch-Calc Audio Unit could not be found.\n\nPlease make sure it is installed.", @"Quit", nil, nil);
 		return false;
 	}

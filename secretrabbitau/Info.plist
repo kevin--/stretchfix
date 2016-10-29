@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>com.YSPf.audiounit.secretrabbitau</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -20,5 +20,24 @@
 	<string>1.0</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
+	<key>AudioComponents</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>SecretRabbitAU</string>
+			<key>factoryFunction</key>
+			<string>SecretRabbitAUFactory</string>
+			<key>manufacturer</key>
+			<string>YSPf</string>
+			<key>name</key>
+			<string>StretchFix: SecretRabbitAU</string>
+			<key>type</key>
+			<string>auol</string>
+			<key>subtype</key>
+			<string>srvs</string>
+			<key>version</key>
+			<integer>65536</integer>
+		</dict>
+	</array>
 </dict>
 </plist>

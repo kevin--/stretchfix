@@ -40,7 +40,8 @@ enum {
 
 @class AudioFileListView;
 
-@interface SFWindowController : NSWindowController <AudioFileReceiver> {
+@interface SFWindowController : NSWindowController <AudioFileReceiver, NSTableViewDataSource, NSApplicationDelegate>
+{
 	IBOutlet NSBox * uiAUViewContainer;
 	IBOutlet NSButton * uiDestretchSMPTECheckbox;
 	IBOutlet NSButton * uiAnalyzeButton;

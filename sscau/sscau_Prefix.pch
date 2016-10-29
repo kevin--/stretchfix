@@ -1,5 +1,0 @@
-//
-// Prefix header for all source files of the 'sscau' target in the 'sscau' project.
-//
-
-#include <Carbon/Carbon.h>

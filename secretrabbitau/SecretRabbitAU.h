@@ -32,7 +32,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "secretrabbitauVersion.h"
 #include "secretrabbitParams.h"
 
-#include "../libsamplerate-0.1.4/src/samplerate.h"
+#include <samplerate.h>
 
 #if AU_DEBUG_DISPATCHER
 	#include "AUDebugDispatcher.h"
@@ -56,19 +56,24 @@ class SecretRabbitAU : public AUBase
 {
 private:
 	SRC_STATE * handle;
+    float * _outputBuffer;
+    size_t _outputBufferFrames;
 
+private:
+    using tBase = AUBase;
+    
 public:
 
 #pragma mark Constructors
 
 	SecretRabbitAU(AudioUnit component);
-#if AU_DEBUG_DISPATCHER
-	virtual ~SecretRabbitAU () { delete mDebugDispatcher; }
-#endif
+    virtual ~SecretRabbitAU();
 
-	virtual ComponentResult SecretRabbitAU::Initialize();
+
+	virtual ComponentResult Initialize();
 	
-	virtual ComponentResult SecretRabbitAU::Reset();
+    virtual ComponentResult Reset(AudioUnitScope inScope,
+                                  AudioUnitElement inElement);
 	
 #pragma mark Accessors	
 

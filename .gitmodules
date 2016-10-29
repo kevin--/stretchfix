@@ -1,0 +1,6 @@
+[submodule "libs/PublicUtility"]
+	path = libs/PublicUtility
+	url = https://github.com/thehtb/AppleCoreAudioUtilityClasses.git
+[submodule "libs/libsamplerate"]
+	path = libs/libsamplerate
+	url = https://github.com/erikd/libsamplerate.git
