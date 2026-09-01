@@ -1,5 +1,5 @@
 # StretchFix
-http://yano.wasteonline.net/software/stretchfix/
+https://wasteonline.net/yano/software/stretchfix
 2008-2016 Kevin C Dixon
 
 ## Problem Definition 
